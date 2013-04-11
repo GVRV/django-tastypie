@@ -20,7 +20,8 @@ from tastypie import http
 from tastypie.paginator import Paginator
 from tastypie.serializers import Serializer
 from tastypie.throttle import BaseThrottle
-from tastypie.utils import is_valid_jsonp_callback_value, dict_strip_unicode_keys, trailing_slash
+from tastypie.utils import is_valid_jsonp_callback_value, dict_strip_unicode_
+, trailing_slash
 from tastypie.utils.mime import determine_format, build_content_type
 from tastypie.validation import Validation
 try:
@@ -1623,7 +1624,7 @@ class ModelResource(Resource):
                 # It's not a field we know about. Move along citizen.
                 continue
 
-            if len(filter_bits) and filter_bits[-1] in QUERY_TERMS.keys():
+            if len(filter_bits) and filter_bits[-1] in QUERY_TERMS:
                 filter_type = filter_bits.pop()
 
             lookup_bits = self.check_filtering(field_name, filter_type, filter_bits)
